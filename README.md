@@ -31,6 +31,7 @@ Things you may want to cover:
 |nickname|string|null: false|
 ### Association
 - has_many :posts
+- has_many :carenders
 
 ## postsテーブル
 |Column|Type|Options|
@@ -40,6 +41,24 @@ Things you may want to cover:
 |user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- has_many :posts_tags
-- has_many  :tags,  through:  :posts_tags
+
+## carenderテーブル
+|Column|Type|Options|
+|------|----|-------|
+|date|text|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|event_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- has_many: events
+
+## eventテーブル
+|Column|Type|Options|
+|------|----|-------|
+|title|integer|null: false, foreign_key: true|
+|start|text|null: false|
+|end|text|null: false|
+### Association
+- belongs_to : carendar
+
 
